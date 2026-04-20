@@ -16,6 +16,11 @@ namespace EtchOSketch
 
         //Global Variables below here --------------------------------------------------------------
 
+        private int oldX, oldY;
+        private Color penColor = Color.Black;
+        private Color backColor = Color.White;
+        private int penSize = 1;
+
         //Custom Methids below here --------------------------------------------------------------
 
         //Event Handlers below here --------------------------------------------------------------
