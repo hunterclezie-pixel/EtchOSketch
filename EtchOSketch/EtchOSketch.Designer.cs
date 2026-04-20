@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            DisplayPictureBox = new PictureBox();
             ExitButton = new Button();
             ClearButton = new Button();
             DrawWavefomButton = new Button();
             SelectColorButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // DisplayPictureBox
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(776, 367);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            DisplayPictureBox.BackColor = Color.White;
+            DisplayPictureBox.Location = new Point(12, 12);
+            DisplayPictureBox.Name = "DisplayPictureBox";
+            DisplayPictureBox.Size = new Size(776, 367);
+            DisplayPictureBox.TabIndex = 0;
+            DisplayPictureBox.TabStop = false;
             // 
             // ExitButton
             // 
@@ -91,16 +91,16 @@
             Controls.Add(DrawWavefomButton);
             Controls.Add(ClearButton);
             Controls.Add(ExitButton);
-            Controls.Add(pictureBox1);
+            Controls.Add(DisplayPictureBox);
             Name = "EtchOSketchForm";
             Text = "EtchOSketchForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox DisplayPictureBox;
         private Button ExitButton;
         private Button ClearButton;
         private Button DrawWavefomButton;
