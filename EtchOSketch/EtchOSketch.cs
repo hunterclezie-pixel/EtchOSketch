@@ -97,10 +97,11 @@ namespace EtchOSketch
             int originalX = this.Location.X;
             int originalY = this.Location.Y;
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 int offsetX = random.Next(-shakeAmount, shakeAmount + 1);
                 int offsetY = random.Next(-shakeAmount, shakeAmount + 1);
+                System.Threading.Thread.Sleep(50);
                 this.Location = new Point(originalX + offsetX, originalY + offsetY);
             }
             this.Location = new Point(originalX, originalY); // Return to original position after shaking
