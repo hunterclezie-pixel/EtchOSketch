@@ -12,6 +12,9 @@ namespace EtchOSketch
         public EtchOSketchForm()
         {
             InitializeComponent();
+            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
+            //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
+            DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
 
         //Global Variables below here --------------------------------------------------------------
@@ -87,6 +90,30 @@ namespace EtchOSketch
             }
         }
 
+        private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    DrawLineSegment(e.X, e.Y);
+                    break;
+                case MouseButtons.Right:
+                    //DisplayContextMenuStrip.Show(DisplayPictureBox, e.Location);
+                    break;
+                case MouseButtons.Middle:
+                    //Todo: open color picker dialogue
+                    //UpdateForeColor();
+                    break;
+                default:
+                    //MessageBox.Show($"{e.Button}");
+                    break;
+            }
+            //Update last position on every move
+            this.oldX = e.X;
+            this.oldY = e.Y;
+            this.Text = $"{e.X},{e.Y}";
+        }
+
         //Event Handlers below here --------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -101,6 +128,7 @@ namespace EtchOSketch
 
         private void DrawWavefomButton_Click(object sender, EventArgs e)
         {
+            DisplayPictureBox.Refresh();
             DrawSineWave();
             DrawGrid();
         }
