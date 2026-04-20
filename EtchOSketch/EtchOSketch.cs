@@ -90,6 +90,22 @@ namespace EtchOSketch
             }
         }
 
+        private void ShakeEtchOSketch()
+        {
+            Random random = new Random();
+            int shakeAmount = 15; // Adjust this value to increase/decrease the shake intensity
+            int originalX = this.Location.X;
+            int originalY = this.Location.Y;
+
+            for (int i = 0; i < 100; i++)
+            {
+                int offsetX = random.Next(-shakeAmount, shakeAmount + 1);
+                int offsetY = random.Next(-shakeAmount, shakeAmount + 1);
+                this.Location = new Point(originalX + offsetX, originalY + offsetY);
+            }
+            this.Location = new Point(originalX, originalY); // Return to original position after shaking
+        }
+
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
             switch (e.Button)
@@ -124,6 +140,8 @@ namespace EtchOSketch
         private void ClearButton_Click(object sender, EventArgs e)
         {
             DisplayPictureBox.Refresh();
+            DisplayPictureBox.BackColor = Color.White;
+            ShakeEtchOSketch();
         }
 
         private void DrawWavefomButton_Click(object sender, EventArgs e)
