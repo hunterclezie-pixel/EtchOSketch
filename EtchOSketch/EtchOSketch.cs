@@ -98,5 +98,11 @@ namespace EtchOSketch
         {
             DisplayPictureBox.Refresh();
         }
+
+        private void DrawWavefomButton_Click(object sender, EventArgs e)
+        {
+            DrawSineWave();
+            DrawGrid();
+        }
     }
 }

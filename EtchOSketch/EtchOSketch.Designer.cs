@@ -73,6 +73,7 @@
             DrawWavefomButton.TabIndex = 3;
             DrawWavefomButton.Text = "Draw Waveform";
             DrawWavefomButton.UseVisualStyleBackColor = true;
+            DrawWavefomButton.Click += DrawWavefomButton_Click;
             // 
             // SelectColorButton
             // 
