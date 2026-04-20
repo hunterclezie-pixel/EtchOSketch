@@ -53,6 +53,7 @@
             ExitButton.TabIndex = 1;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // ClearButton
             // 
