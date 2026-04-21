@@ -33,6 +33,7 @@
             ClearButton = new Button();
             DrawWavefomButton = new Button();
             SelectColorButton = new Button();
+            PenColorDialog = new ColorDialog();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -83,6 +84,7 @@
             SelectColorButton.TabIndex = 4;
             SelectColorButton.Text = "Select Color";
             SelectColorButton.UseVisualStyleBackColor = true;
+            SelectColorButton.Click += SelectColorButton_Click;
             // 
             // EtchOSketchForm
             // 
@@ -107,5 +109,6 @@
         private Button ClearButton;
         private Button DrawWavefomButton;
         private Button SelectColorButton;
+        private ColorDialog PenColorDialog;
     }
 }

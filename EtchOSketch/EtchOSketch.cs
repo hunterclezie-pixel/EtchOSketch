@@ -13,7 +13,6 @@ namespace EtchOSketch
         {
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
-            //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
 
@@ -115,20 +114,23 @@ namespace EtchOSketch
                     DrawLineSegment(e.X, e.Y);
                     break;
                 case MouseButtons.Right:
-                    //DisplayContextMenuStrip.Show(DisplayPictureBox, e.Location);
                     break;
                 case MouseButtons.Middle:
-                    //Todo: open color picker dialogue
-                    //UpdateForeColor();
                     break;
                 default:
-                    //MessageBox.Show($"{e.Button}");
                     break;
             }
+
             //Update last position on every move
             this.oldX = e.X;
             this.oldY = e.Y;
             this.Text = $"{e.X},{e.Y}";
+        }
+
+        private void UpdatePenColor()
+        {
+            PenColorDialog.ShowDialog();
+            this.penColor = PenColorDialog.Color;
         }
 
         //Event Handlers below here --------------------------------------------------------------
@@ -150,6 +152,11 @@ namespace EtchOSketch
             DisplayPictureBox.Refresh();
             DrawSineWave();
             DrawGrid();
+        }
+
+        private void SelectColorButton_Click(object sender, EventArgs e)
+        {
+            UpdatePenColor();
         }
     }
 }
