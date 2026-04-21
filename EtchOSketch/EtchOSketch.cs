@@ -21,7 +21,7 @@ namespace EtchOSketch
             DrawWaveformStripMenuItem.Click += DrawWavefomButton_Click;
             SelectColorStripMenuItem.Click += SelectColorButton_Click;
 
-            // Event handler for the Main Menu item
+            // Event handler for the Main Menu items
             ExitMainStripItem.Click += ExitButton_Click;
             ClearMainStripItem.Click += ClearButton_Click;
             DrawWaveformMainStripItem.Click += DrawWavefomButton_Click;
@@ -75,6 +75,29 @@ namespace EtchOSketch
                 lastY = currentY;
             }
 
+            //free up resorces
+            g.Dispose();
+            thePen.Dispose();
+        }
+
+        void DrawCosineWave()
+        {
+            //create a graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            //create a pen to draw with
+            Pen thePen = new Pen(Color.Red);
+            int lastX = 0, lastY = 0, currentY = 0;
+            float scaleX = DisplayPictureBox.Width / 360f;
+            float scaleY = (DisplayPictureBox.Height / 200f) * -1;
+            g.TranslateTransform(0, DisplayPictureBox.Height / 2);
+            g.ScaleTransform(scaleX, scaleY);
+            for (int currentX = 0; currentX < 360; currentX++)
+            {
+                currentY = (int)(Math.Round(100 * Math.Cos((Math.PI / 180) * currentX)));
+                g.DrawLine(thePen, lastX, lastY, currentX, currentY);
+                lastX = currentX;
+                lastY = currentY;
+            }
             //free up resorces
             g.Dispose();
             thePen.Dispose();
@@ -165,6 +188,7 @@ namespace EtchOSketch
         {
             DisplayPictureBox.Refresh();
             DrawSineWave();
+            DrawCosineWave();
             DrawGrid();
         }
 
