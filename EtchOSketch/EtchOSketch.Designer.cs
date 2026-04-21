@@ -60,6 +60,7 @@
             // 
             // DisplayPictureBox
             // 
+            DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DisplayPictureBox.BackColor = Color.White;
             DisplayPictureBox.Location = new Point(12, 31);
             DisplayPictureBox.Name = "DisplayPictureBox";
@@ -69,6 +70,7 @@
             // 
             // ExitButton
             // 
+            ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ExitButton.Location = new Point(633, 385);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(155, 53);
@@ -79,6 +81,7 @@
             // 
             // ClearButton
             // 
+            ClearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ClearButton.Location = new Point(472, 385);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(155, 53);
@@ -89,6 +92,7 @@
             // 
             // DrawWavefomButton
             // 
+            DrawWavefomButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DrawWavefomButton.Location = new Point(311, 385);
             DrawWavefomButton.Name = "DrawWavefomButton";
             DrawWavefomButton.Size = new Size(155, 53);
@@ -99,6 +103,7 @@
             // 
             // SelectColorButton
             // 
+            SelectColorButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             SelectColorButton.Location = new Point(150, 385);
             SelectColorButton.Name = "SelectColorButton";
             SelectColorButton.Size = new Size(155, 53);
@@ -162,7 +167,7 @@
             // AboutStripMenuItem
             // 
             AboutStripMenuItem.Name = "AboutStripMenuItem";
-            AboutStripMenuItem.Size = new Size(224, 26);
+            AboutStripMenuItem.Size = new Size(133, 26);
             AboutStripMenuItem.Text = "About";
             AboutStripMenuItem.Click += AboutStripMenuItem_Click;
             // 
@@ -186,7 +191,7 @@
             // ExitMainStripItem
             // 
             ExitMainStripItem.Name = "ExitMainStripItem";
-            ExitMainStripItem.Size = new Size(224, 26);
+            ExitMainStripItem.Size = new Size(116, 26);
             ExitMainStripItem.Text = "Exit";
             // 
             // EditMainStripItem
@@ -199,19 +204,19 @@
             // SelectColorMainStripItem
             // 
             SelectColorMainStripItem.Name = "SelectColorMainStripItem";
-            SelectColorMainStripItem.Size = new Size(224, 26);
+            SelectColorMainStripItem.Size = new Size(199, 26);
             SelectColorMainStripItem.Text = "Select Color";
             // 
             // DrawWaveformMainStripItem
             // 
             DrawWaveformMainStripItem.Name = "DrawWaveformMainStripItem";
-            DrawWaveformMainStripItem.Size = new Size(224, 26);
+            DrawWaveformMainStripItem.Size = new Size(199, 26);
             DrawWaveformMainStripItem.Text = "Draw Waveform";
             // 
             // ClearMainStripItem
             // 
             ClearMainStripItem.Name = "ClearMainStripItem";
-            ClearMainStripItem.Size = new Size(224, 26);
+            ClearMainStripItem.Size = new Size(199, 26);
             ClearMainStripItem.Text = "Clear";
             // 
             // HelpMainStripItem
@@ -224,7 +229,7 @@
             // AboutMainStripItem
             // 
             AboutMainStripItem.Name = "AboutMainStripItem";
-            AboutMainStripItem.Size = new Size(224, 26);
+            AboutMainStripItem.Size = new Size(133, 26);
             AboutMainStripItem.Text = "About";
             // 
             // EtchOSketchForm
