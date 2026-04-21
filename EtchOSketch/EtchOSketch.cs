@@ -15,11 +15,18 @@ namespace EtchOSketch
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
 
-            // Event handlers for context menu items
+            // Event handlers for Context Menu items
             ExitStripMenuItem.Click += ExitButton_Click;
             ClearStripMenuItem.Click += ClearButton_Click;
             DrawWaveformStripMenuItem.Click += DrawWavefomButton_Click;
             SelectColorStripMenuItem.Click += SelectColorButton_Click;
+
+            // Event handler for the Main Menu item
+            ExitMainStripItem.Click += ExitButton_Click;
+            ClearMainStripItem.Click += ClearButton_Click;
+            DrawWaveformMainStripItem.Click += DrawWavefomButton_Click;
+            SelectColorMainStripItem.Click += SelectColorButton_Click;
+            AboutMainStripItem.Click += AboutStripMenuItem_Click;
         }
 
         //Global Variables below here --------------------------------------------------------------
