@@ -114,6 +114,7 @@ namespace EtchOSketch
                     DrawLineSegment(e.X, e.Y);
                     break;
                 case MouseButtons.Right:
+                    DisplayContextMenuStrip.Show(DisplayPictureBox, e.Location);
                     break;
                 case MouseButtons.Middle:
                     break;

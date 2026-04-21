@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DisplayPictureBox = new PictureBox();
             ExitButton = new Button();
             ClearButton = new Button();
             DrawWavefomButton = new Button();
             SelectColorButton = new Button();
             PenColorDialog = new ColorDialog();
+            DisplayContextMenuStrip = new ContextMenuStrip(components);
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            selectColorToolStripMenuItem = new ToolStripMenuItem();
+            drawWaveformToolStripMenuItem = new ToolStripMenuItem();
+            clearToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
+            DisplayContextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayPictureBox
@@ -86,6 +97,64 @@
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;
             // 
+            // DisplayContextMenuStrip
+            // 
+            DisplayContextMenuStrip.ImageScalingSize = new Size(20, 20);
+            DisplayContextMenuStrip.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
+            DisplayContextMenuStrip.Name = "DisplayContextMenuStrip";
+            DisplayContextMenuStrip.Size = new Size(211, 104);
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(210, 24);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(224, 26);
+            exitToolStripMenuItem.Text = "Exit";
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { selectColorToolStripMenuItem, drawWaveformToolStripMenuItem, clearToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(210, 24);
+            editToolStripMenuItem.Text = "Edit";
+            // 
+            // selectColorToolStripMenuItem
+            // 
+            selectColorToolStripMenuItem.Name = "selectColorToolStripMenuItem";
+            selectColorToolStripMenuItem.Size = new Size(224, 26);
+            selectColorToolStripMenuItem.Text = "Select Color";
+            // 
+            // drawWaveformToolStripMenuItem
+            // 
+            drawWaveformToolStripMenuItem.Name = "drawWaveformToolStripMenuItem";
+            drawWaveformToolStripMenuItem.Size = new Size(224, 26);
+            drawWaveformToolStripMenuItem.Text = "Draw Waveform";
+            // 
+            // clearToolStripMenuItem
+            // 
+            clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            clearToolStripMenuItem.Size = new Size(224, 26);
+            clearToolStripMenuItem.Text = "Clear";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(210, 24);
+            helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(224, 26);
+            aboutToolStripMenuItem.Text = "About";
+            // 
             // EtchOSketchForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -99,6 +168,7 @@
             Name = "EtchOSketchForm";
             Text = "EtchOSketchForm";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            DisplayContextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -110,5 +180,14 @@
         private Button DrawWavefomButton;
         private Button SelectColorButton;
         private ColorDialog PenColorDialog;
+        private ContextMenuStrip DisplayContextMenuStrip;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem selectColorToolStripMenuItem;
+        private ToolStripMenuItem drawWaveformToolStripMenuItem;
+        private ToolStripMenuItem clearToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
