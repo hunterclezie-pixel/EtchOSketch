@@ -53,6 +53,7 @@
             ClearMainStripItem = new ToolStripMenuItem();
             HelpMainStripItem = new ToolStripMenuItem();
             AboutMainStripItem = new ToolStripMenuItem();
+            DisplayToolTip = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             DisplayContextMenuStrip.SuspendLayout();
             DisplayMainMenuStrip.SuspendLayout();
@@ -67,6 +68,7 @@
             DisplayPictureBox.Size = new Size(776, 348);
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
+            DisplayToolTip.SetToolTip(DisplayPictureBox, "Drawing area, hold left mouse click to draw");
             // 
             // ExitButton
             // 
@@ -76,6 +78,7 @@
             ExitButton.Size = new Size(155, 53);
             ExitButton.TabIndex = 1;
             ExitButton.Text = "Exit";
+            DisplayToolTip.SetToolTip(ExitButton, "Exits the program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -87,6 +90,7 @@
             ClearButton.Size = new Size(155, 53);
             ClearButton.TabIndex = 2;
             ClearButton.Text = "Clear";
+            DisplayToolTip.SetToolTip(ClearButton, "Clears the picture box");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -98,6 +102,7 @@
             DrawWavefomButton.Size = new Size(155, 53);
             DrawWavefomButton.TabIndex = 3;
             DrawWavefomButton.Text = "Draw Waveform";
+            DisplayToolTip.SetToolTip(DrawWavefomButton, "Draws a grid with a Sine, Cosine, and Tangent waveform");
             DrawWavefomButton.UseVisualStyleBackColor = true;
             DrawWavefomButton.Click += DrawWavefomButton_Click;
             // 
@@ -109,6 +114,7 @@
             SelectColorButton.Size = new Size(155, 53);
             SelectColorButton.TabIndex = 4;
             SelectColorButton.Text = "Select Color";
+            DisplayToolTip.SetToolTip(SelectColorButton, "Allows the user to select the color of the pen");
             SelectColorButton.UseVisualStyleBackColor = true;
             SelectColorButton.Click += SelectColorButton_Click;
             // 
@@ -131,6 +137,7 @@
             ExitStripMenuItem.Name = "ExitStripMenuItem";
             ExitStripMenuItem.Size = new Size(116, 26);
             ExitStripMenuItem.Text = "Exit";
+            ExitStripMenuItem.ToolTipText = "Exits the program";
             // 
             // editToolStripMenuItem
             // 
@@ -144,18 +151,21 @@
             SelectColorStripMenuItem.Name = "SelectColorStripMenuItem";
             SelectColorStripMenuItem.Size = new Size(199, 26);
             SelectColorStripMenuItem.Text = "Select Color";
+            SelectColorStripMenuItem.ToolTipText = "Allows the user to select the color of the pen";
             // 
             // DrawWaveformStripMenuItem
             // 
             DrawWaveformStripMenuItem.Name = "DrawWaveformStripMenuItem";
             DrawWaveformStripMenuItem.Size = new Size(199, 26);
             DrawWaveformStripMenuItem.Text = "Draw Waveform";
+            DrawWaveformStripMenuItem.ToolTipText = "Draws a grid with a Sine, Cosine, and Tangent waveform";
             // 
             // ClearStripMenuItem
             // 
             ClearStripMenuItem.Name = "ClearStripMenuItem";
             ClearStripMenuItem.Size = new Size(199, 26);
             ClearStripMenuItem.Text = "Clear";
+            ClearStripMenuItem.ToolTipText = "Clears the picture box";
             // 
             // helpToolStripMenuItem
             // 
@@ -169,6 +179,7 @@
             AboutStripMenuItem.Name = "AboutStripMenuItem";
             AboutStripMenuItem.Size = new Size(133, 26);
             AboutStripMenuItem.Text = "About";
+            AboutStripMenuItem.ToolTipText = "Tells you about the program";
             AboutStripMenuItem.Click += AboutStripMenuItem_Click;
             // 
             // DisplayMainMenuStrip
@@ -193,6 +204,7 @@
             ExitMainStripItem.Name = "ExitMainStripItem";
             ExitMainStripItem.Size = new Size(116, 26);
             ExitMainStripItem.Text = "Exit";
+            ExitMainStripItem.ToolTipText = "Exits the program";
             // 
             // EditMainStripItem
             // 
@@ -206,18 +218,21 @@
             SelectColorMainStripItem.Name = "SelectColorMainStripItem";
             SelectColorMainStripItem.Size = new Size(199, 26);
             SelectColorMainStripItem.Text = "Select Color";
+            SelectColorMainStripItem.ToolTipText = "Allows the user to select the color of the pen";
             // 
             // DrawWaveformMainStripItem
             // 
             DrawWaveformMainStripItem.Name = "DrawWaveformMainStripItem";
             DrawWaveformMainStripItem.Size = new Size(199, 26);
             DrawWaveformMainStripItem.Text = "Draw Waveform";
+            DrawWaveformMainStripItem.ToolTipText = "Draws a grid with a Sine, Cosine, and Tangent waveform";
             // 
             // ClearMainStripItem
             // 
             ClearMainStripItem.Name = "ClearMainStripItem";
             ClearMainStripItem.Size = new Size(199, 26);
             ClearMainStripItem.Text = "Clear";
+            ClearMainStripItem.ToolTipText = "Clears the picture box";
             // 
             // HelpMainStripItem
             // 
@@ -231,6 +246,7 @@
             AboutMainStripItem.Name = "AboutMainStripItem";
             AboutMainStripItem.Size = new Size(133, 26);
             AboutMainStripItem.Text = "About";
+            AboutMainStripItem.ToolTipText = "Tells you about the program";
             // 
             // EtchOSketchForm
             // 
@@ -245,6 +261,7 @@
             Controls.Add(DisplayPictureBox);
             MainMenuStrip = DisplayMainMenuStrip;
             Name = "EtchOSketchForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EtchOSketchForm";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             DisplayContextMenuStrip.ResumeLayout(false);
@@ -280,5 +297,6 @@
         private ToolStripMenuItem ClearMainStripItem;
         private ToolStripMenuItem HelpMainStripItem;
         private ToolStripMenuItem AboutMainStripItem;
+        private ToolTip DisplayToolTip;
     }
 }
