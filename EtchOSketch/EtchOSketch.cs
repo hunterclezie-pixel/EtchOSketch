@@ -14,6 +14,12 @@ namespace EtchOSketch
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
+
+            // Event handlers for context menu items
+            ExitStripMenuItem.Click += ExitButton_Click;
+            ClearStripMenuItem.Click += ClearButton_Click;
+            DrawWaveformStripMenuItem.Click += DrawWavefomButton_Click;
+            SelectColorStripMenuItem.Click += SelectColorButton_Click;
         }
 
         //Global Variables below here --------------------------------------------------------------
@@ -158,6 +164,13 @@ namespace EtchOSketch
         private void SelectColorButton_Click(object sender, EventArgs e)
         {
             UpdatePenColor();
+        }
+
+        private void AboutStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is an EtchOSketch application, with basic drawing functionalities. \n" +
+                "You can draw lines, select colors, and clear the screen. \n" +
+                "This also allows a Sine, Cosine, and Tangent waves are drawn in different colors.");
         }
     }
 }
