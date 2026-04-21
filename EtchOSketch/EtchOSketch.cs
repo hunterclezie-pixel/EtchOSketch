@@ -38,6 +38,7 @@ namespace EtchOSketch
 
         //Custom Methids below here --------------------------------------------------------------
 
+        // Draws a line segment from the last position to the new position
         void DrawLineSegment(int newX, int newY)
         {
             //create a graphics object named g that draws on the picture box
@@ -53,6 +54,7 @@ namespace EtchOSketch
             thePen.Dispose();
         }
 
+        // Draws a sine wave on the picture box
         void DrawSineWave()
         {
             //create a graphics object named g that draws on the picture box
@@ -80,6 +82,7 @@ namespace EtchOSketch
             thePen.Dispose();
         }
 
+        // Draws a cosine wave on the picture box
         void DrawCosineWave()
         {
             //create a graphics object named g that draws on the picture box
@@ -103,6 +106,7 @@ namespace EtchOSketch
             thePen.Dispose();
         }
 
+        // Draws a tangent wave on the picture box
         void DrawTangentWave()
         {
             //create a graphics object named g that draws on the picture box
@@ -129,10 +133,11 @@ namespace EtchOSketch
             thePen.Dispose();
         }
 
+        // Draws a grid on the picture box
         void DrawGrid()
         {
             int xDiv = DisplayPictureBox.Width / 10;
-            int yDiv = DisplayPictureBox.Height / 8;
+            int yDiv = DisplayPictureBox.Height / 10;
 
             this.oldX = 0;
             this.oldY = 0;
@@ -151,6 +156,7 @@ namespace EtchOSketch
             }
         }
 
+        // Shakes the form to create a visual effect when clearing the screen
         private void ShakeEtchOSketch()
         {
             Random random = new Random();
@@ -168,6 +174,7 @@ namespace EtchOSketch
             this.Location = new Point(originalX, originalY); // Return to original position after shaking
         }
 
+        // Handles mouse movement and clicks on the picture box for drawing and showing the context menu
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
             switch (e.Button)
@@ -179,6 +186,7 @@ namespace EtchOSketch
                     DisplayContextMenuStrip.Show(DisplayPictureBox, e.Location);
                     break;
                 case MouseButtons.Middle:
+                    UpdateBackgroundColor();
                     break;
                 default:
                     break;
@@ -190,10 +198,19 @@ namespace EtchOSketch
             this.Text = $"{e.X},{e.Y}";
         }
 
+        // Opens the color dialog to select a new pen color
         private void UpdatePenColor()
         {
             PenColorDialog.ShowDialog();
             this.penColor = PenColorDialog.Color;
+        }
+
+        // Opens the color dialog to select a new background color
+        void UpdateBackgroundColor()
+        {
+            PenColorDialog.ShowDialog();
+            this.backColor = PenColorDialog.Color;
+            DisplayPictureBox.BackColor = this.backColor;
         }
 
         //Event Handlers below here --------------------------------------------------------------
