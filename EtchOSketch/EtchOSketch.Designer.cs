@@ -76,7 +76,7 @@
             ExitButton.Location = new Point(633, 385);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(155, 53);
-            ExitButton.TabIndex = 1;
+            ExitButton.TabIndex = 2;
             ExitButton.Text = "Exit";
             DisplayToolTip.SetToolTip(ExitButton, "Exits the program");
             ExitButton.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             ClearButton.Location = new Point(472, 385);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(155, 53);
-            ClearButton.TabIndex = 2;
+            ClearButton.TabIndex = 3;
             ClearButton.Text = "Clear";
             DisplayToolTip.SetToolTip(ClearButton, "Clears the picture box");
             ClearButton.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             DrawWavefomButton.Location = new Point(311, 385);
             DrawWavefomButton.Name = "DrawWavefomButton";
             DrawWavefomButton.Size = new Size(155, 53);
-            DrawWavefomButton.TabIndex = 3;
+            DrawWavefomButton.TabIndex = 1;
             DrawWavefomButton.Text = "Draw Waveform";
             DisplayToolTip.SetToolTip(DrawWavefomButton, "Draws a grid with a Sine, Cosine, and Tangent waveform");
             DrawWavefomButton.UseVisualStyleBackColor = true;
@@ -250,8 +250,10 @@
             // 
             // EtchOSketchForm
             // 
+            AcceptButton = DrawWavefomButton;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
             Controls.Add(DisplayMainMenuStrip);
             Controls.Add(SelectColorButton);
